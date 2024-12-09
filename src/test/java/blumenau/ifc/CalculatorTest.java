@@ -17,8 +17,8 @@ class CalculatorTest {
         assertEquals(5, calculator.add(2, 3)); // Correto
         assertEquals(7, calculator.add(4, 2)); // Vai falhar, mas sem mensagem explicativa
         assertEquals(10, calculator.add(5, 5));
-        assertEquals(calculator.add(2,2), 5);
-        assertEquals(calculator.add(2,2), calculator.add(3, 6));
+        assertEquals(calculator.add(2, 2), 5);
+        assertEquals(calculator.add(2, 2), calculator.add(3, 6));
     }
 
     @Test
@@ -40,8 +40,8 @@ class CalculatorTest {
     @Test
     void testAsserts() {
         // Dados de exemplo
-        int[] array1 = {1, 2, 3};
-        int[] array2 = {1, 2, 3};
+        int[] array1 = { 1, 2, 3 };
+        int[] array2 = { 1, 2, 3 };
         String str1 = "Hello";
         String str2 = "World";
         String sameString = str1;
@@ -52,8 +52,7 @@ class CalculatorTest {
         // ASSERT_ALL
         assertAll("Grouped assertions",
                 () -> assertEquals(5, 2 + 3),
-                () -> assertNotNull(str1)
-        );
+                () -> assertNotNull(str1));
 
         // ASSERT_ARRAY_EQUALS
         assertArrayEquals(array1, array2);
@@ -82,9 +81,6 @@ class CalculatorTest {
         // ASSERT_NOT_SAME
         assertNotSame(str1, str2);
 
-        // ASSERT_INSTANCE_OF
-//        assertInstanceOf(String.class, str1);
-
         // ASSERT_NULL
         String nullString = null;
         assertNull(nullString);
@@ -95,9 +91,6 @@ class CalculatorTest {
         // ASSERT_THROWS
         assertThrows(NumberFormatException.class, () -> Integer.parseInt("NaN"));
 
-        // ASSERT_THROWS_EXACTLY
-//        assertThrowsExactly(NumberFormatException.class, () -> Integer.parseInt("NaN"));
-
         // ASSERT_TIMEOUT
         assertTimeout(Duration.ofSeconds(1), () -> Thread.sleep(500));
 
@@ -107,10 +100,7 @@ class CalculatorTest {
         // ASSERT_TRUE
         assertTrue(str1.startsWith("H"));
 
-        // FAIL
-        if (false) {
-            fail("This should not happen!");
-        }
+        fail();
     }
 
 }
